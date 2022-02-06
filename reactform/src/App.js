@@ -1,6 +1,7 @@
 import './index.css';
 import { useState } from 'react';
 import { RecoilRoot } from 'recoil';
+import { stateAtom } from './atoms/stateAtom';
 import { useRecoilState } from 'recoil';
 import { errorAtom } from './atoms/stateAtom';
 import Box from '@mui/material/Box';
@@ -34,6 +35,7 @@ const steps = [
 ];
 
 function App() {
+  const [fields, setFields] = useRecoilState(stateAtom);
   const [error, setError] = useRecoilState(errorAtom);
   const [activeStep, setActiveStep] = useState(0);
   const [skipped, setSkipped] = useState(new Set());
@@ -60,6 +62,16 @@ function App() {
   };
   const handleReset = () => {
     setActiveStep(0);
+    setFields({
+      name: '',
+      lastname: '',
+      age: '',
+      phone: '',
+      email: '',
+      seat: '',
+      allergies: '',
+      food: '',
+    });
   };
 
   return (
