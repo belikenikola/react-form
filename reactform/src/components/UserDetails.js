@@ -36,7 +36,7 @@ export default function UserDetails(handleChange) {
         } else {
           // Set the error state empty or remove the error for firstname input
           // omit function removes/omits the value from given object and returns a new object
-          let newObj = omit(errors, 'firstname');
+          let newObj = omit(errors, 'name');
           setErrors(newObj);
         }
         break;
