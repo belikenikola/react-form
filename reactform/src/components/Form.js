@@ -82,7 +82,10 @@ export default function Form() {
                       </label>
                       <input
                         type="text"
-                        name="email-address"
+                        data-testid="email"
+                        value={fields.email}
+                        onChange={handleFieldChange}
+                        //name="email-address"
                         id="email-address"
                         autoComplete="email"
                         className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
@@ -175,6 +178,7 @@ export default function Form() {
                 </div>
                 <div data-testid="name">{fields.name}</div>
                 <div data-testid="lastName">{fields.lastName}</div>
+                <div data-testid="email">{fields.email}</div>
                 <div className="px-4 py-3 bg-gray-50 text-right sm:px-6">
                   <button
                     type="submit"
