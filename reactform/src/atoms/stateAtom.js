@@ -13,3 +13,8 @@ export const stateAtom = atom({
     food: '',
   }, // default value (aka initial value)
 });
+
+export const errorAtom = atom({
+  key: 'errorAtom', // unique ID
+  default: true,
+});
