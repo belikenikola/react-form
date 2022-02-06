@@ -18,20 +18,20 @@ export default function UserDetails(handleChange) {
     console.log(name, value); // A function to validate each input values
 
     switch (name) {
-      case 'firstname':
-        const numb = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-        let err = false;
+      case 'name':
+        const numbName = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+        let errName = false;
         for (let i = 0; i < value.length; i++) {
-          numb.forEach((numb) => {
-            if (Number(value[i]) === numb) {
-              err = true;
+          numbName.forEach((numbName) => {
+            if (Number(value[i]) === numbName) {
+              errName = true;
             }
           });
         }
-        if (err === true) {
+        if (errName === true) {
           setErrors({
             ...errors,
-            firstname: 'First name should not contain numbers',
+            name: 'First name should not contain numbers',
           });
         } else {
           // Set the error state empty or remove the error for firstname input
@@ -41,10 +41,19 @@ export default function UserDetails(handleChange) {
         }
         break;
       case 'lastname':
-        if (err === true) {
+        const numbLaName = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+        let errLaName = false;
+        for (let i = 0; i < value.length; i++) {
+          numbLaName.forEach((numbLaName) => {
+            if (Number(value[i]) === numbLaName) {
+              errLaName = true;
+            }
+          });
+        }
+        if (errLaName === true) {
           setErrors({
             ...errors,
-            lastname: 'First name should not contain numbers',
+            lastname: 'Last name should not contain numbers',
           });
         } else {
           // Set the error state empty or remove the error for firstname input
@@ -111,7 +120,7 @@ export default function UserDetails(handleChange) {
                   <div className="grid grid-cols-6 gap-6">
                     <div className="col-span-6 sm:col-span-3">
                       <label
-                        htmlFor="first-name"
+                        htmlFor="name"
                         className="block text-sm font-medium text-gray-700"
                       >
                         * First name
@@ -121,7 +130,7 @@ export default function UserDetails(handleChange) {
                         value={fields.name}
                         onChange={handleFieldChange}
                         data-testid="name"
-                        id="first-name"
+                        id="name"
                         required
                         className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                       />
@@ -139,8 +148,8 @@ export default function UserDetails(handleChange) {
                       </label>
                       <input
                         type="text"
-                        data-testid="lastName"
-                        value={fields.lastName}
+                        data-testid="lastname"
+                        value={fields.lastname}
                         onChange={handleFieldChange}
                         id="last-name"
                         required

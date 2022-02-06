@@ -4,7 +4,7 @@ export const stateAtom = atom({
   key: 'stateAtom', // unique ID (with respect to other atoms/selectors)
   default: {
     name: '',
-    lastName: '',
+    lastname: '',
     age: '',
     phone: '',
     email: '',
