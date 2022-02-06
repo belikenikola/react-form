@@ -12,6 +12,7 @@ import Typography from '@mui/material/Typography';
 import UserDetails from './components/UserDetails';
 import ContactDetails from './components/ContactDetails';
 import PersonalDetails from './components/PersonalDetails';
+import Confirmation from './components/Confirmation';
 
 const steps = [
   {
@@ -28,7 +29,7 @@ const steps = [
   },
   {
     name: 'Step 4',
-    form: <UserDetails />,
+    form: <Confirmation />,
   },
 ];
 
@@ -38,7 +39,7 @@ function App() {
   const [skipped, setSkipped] = useState(new Set());
 
   const isStepOptional = (step) => {
-    return step === 1;
+    return step === 2;
   };
 
   const isStepSkipped = (step) => {

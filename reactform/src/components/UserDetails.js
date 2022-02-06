@@ -73,7 +73,7 @@ export default function UserDetails(handleChange) {
   };
 
   if (
-    fields.name !== 'email' &&
+    fields.name !== '' &&
     fields.lastName !== '' &&
     fields.age >= 0 &&
     isEmpty(errors)
@@ -175,7 +175,6 @@ export default function UserDetails(handleChange) {
           </div>
         </div>
       </div>
-
       <div className="hidden sm:block" aria-hidden="true">
         <div className="py-5">
           <div className="border-t border-gray-200" />

@@ -42,6 +42,12 @@ export default function Form1({ handleChange }) {
     }
   };
 
+  if (fields.email !== '' && fields.phone !== '' && isEmpty(errors)) {
+    setError(false);
+  } else {
+    setError(true);
+  }
+
   return (
     <>
       <div className="hidden sm:block" aria-hidden="true">
